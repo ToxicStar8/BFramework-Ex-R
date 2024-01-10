@@ -1,0 +1,5 @@
+int^string^string^int^float^float^int^string
+id^en_name^cn_name^hp^speed^damage^exp^prefab
+^英文名^中文名^血量^速度^伤害^掉落经验^怪物预制体名
+1^monster01^1号怪物^1^2^2^1^Monster_01.prefab
+2^monster02^2号怪物^1^1^2^1^Monster_02.prefab
