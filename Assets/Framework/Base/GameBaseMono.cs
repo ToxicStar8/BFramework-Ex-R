@@ -2,7 +2,7 @@
  * BFramework
  * 所有游戏对象的基类 存放通用方法
  * 创建时间：2023/05/08 17:01:23
- *********************************************/
+ *********************************************
 using LitJson;
 using System;
 using UnityEngine;
@@ -12,7 +12,7 @@ namespace Framework
     /// <summary>
     /// 所有游戏对象的Mono基类 同步GameBase里的方法
     /// </summary>
-    public abstract class GameBaseMono : MonoBehaviour
+    public abstract class GameBaseMono : NetworkBehaviour
     {
         #region Event 
         protected virtual void SendEvent(ushort eventNo, params object[] args)
@@ -103,6 +103,14 @@ namespace Framework
         protected virtual void OpenUI<T>(E_UILevel uiLevel = E_UILevel.Common, params object[] args) where T : UIBase, new()
         {
             GameGod.Instance.UIManager.OpenUI<T>(uiLevel, args);
+        }
+
+        /// <summary>
+        /// 获取UI
+        /// </summary>
+        protected virtual UIBase GetUI<T>() where T : UIBase, new()
+        {
+            return GameGod.Instance.UIManager.GetUI<T>();
         }
 
         /// <summary>
